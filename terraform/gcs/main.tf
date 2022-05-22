@@ -1,7 +1,7 @@
 #Main Storage Bucket
 resource "google_storage_bucket" "static-content" {
   name          = "static-content"
-  location      = "${var.region}"
+  location      = var.location
   uniform_bucket_level_access = true
   versioning {
     enabled = true
