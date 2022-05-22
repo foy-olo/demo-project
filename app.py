@@ -9,10 +9,10 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/')xs
 def hello():
     """Return a friendly HTTP greeting."""
-    message = "It's running!"
+    message = "It's running! version 2"
 
     """Get Cloud Run environment variables."""
     service = os.environ.get('K_SERVICE', 'Unknown service')
