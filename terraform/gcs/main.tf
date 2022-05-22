@@ -20,10 +20,10 @@ data "google_iam_policy" "static-content-policy" {
   binding {
     role = "roles/storage.admin"
     members = ["serviceAccount:storage-admin@${var.google_project}.iam.gserviceaccount.com"]
+  }
 }
 
 resource "google_storage_bucket_iam_policy" "static-content-member" {
   bucket = google_storage_bucket.static-content.name
   policy_data = data.google_iam_policy.static-content-policy.policy_data
 }
-
