@@ -8,7 +8,7 @@ provider "google"{
 data "google_service_account_access_token" "gcs_sa" {
   provider = google.tokengenerator
   target_service_account = "storage-admin@${var.google_project}.iam.gserviceaccount.com"
-  scopes = ["userinfo-email", "cloud-platform"]
+  scopes = ["https://www.googleapis.com/auth/cloud-platform"]
   lifetime = "300s"
   }
 
