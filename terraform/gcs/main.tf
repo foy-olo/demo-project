@@ -1,6 +1,6 @@
 #Main Storage Bucket
 providers = {
-  google - google.gcs_impersonated
+  google = google.gcs_impersonated
 }
 
 resource "google_storage_bucket" "static-content" {
