@@ -9,7 +9,7 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 
-@app.route('/')xs
+@app.route('/')
 def hello():
     """Return a friendly HTTP greeting."""
     message = "It's running! version 2"
