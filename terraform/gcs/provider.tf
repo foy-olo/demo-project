@@ -16,11 +16,3 @@ provider "google" {
   alias        = "gcs_impersonated"
   access_token = data.google_service_account_access_token.gcs_sa.access_token
 }
-
-data "google_client_openid_userinfo" "me" {
-  provider = google.gcs_impersonated
-}
-
-output "target-email" {
-  value = data.google_client_openid_userinfo.me.email
-}
