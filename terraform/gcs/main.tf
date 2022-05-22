@@ -1,9 +1,6 @@
 #Main Storage Bucket
-providers = {
-  google = google.gcs_impersonated
-}
-
 resource "google_storage_bucket" "static-content" {
+  provider      = google.gcs_impersonated
   name          = "${var.google_project}-static-content"
   location      = var.location
   uniform_bucket_level_access = true
