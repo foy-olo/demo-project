@@ -1,6 +1,6 @@
 #Main Storage Bucket
 resource "google_storage_bucket" "static-content" {
-  name          = "static-content"
+  name          = "${var.google_project}-static-content"
   location      = var.location
   uniform_bucket_level_access = true
   versioning {
