@@ -31,5 +31,5 @@ resource "google_cloud_run_service_iam_policy" "noauth" {
 }
 
 data "external" "image_digest" {
-  program = ["bash", "scripts/get_latest_tag.sh", var.project, local.service_name]
+  program = ["bash", "scripts/get_latest_tag.sh", var.google_project, local.service_name]
 }
