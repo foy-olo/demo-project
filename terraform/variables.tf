@@ -9,3 +9,8 @@ variable "location" {
   type = string
   default = "europe-west2"
   }
+
+locals {
+  service_folder = "service"
+  service_name   = "hello-world"
+  }
