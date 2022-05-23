@@ -22,7 +22,7 @@ resource "google_compute_subnetwork" "private" {
 resource "google_vpc_access_connector" "connector" {
   name          = "vpcconn"
   region        = var.location
-  ip_cidr_range = "10.1.0.0/8"
+  ip_cidr_range = "10.1.0.0/28"
   network       = google_compute_network.vpc_network.name
   depends_on    = [google_project_service.vpcaccess_api]
 }
