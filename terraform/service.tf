@@ -1,7 +1,7 @@
 resource "google_cloud_run_service" "hello-world" {
   name     = "hello-world"
-  location = ${var.location}
-  project  = ${var.google_project}
+  location = var.location
+  project  = var.google_project
   autogenerate_revision_name = true
 
   template {
