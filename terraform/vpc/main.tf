@@ -7,7 +7,7 @@ resource "google_compute_network" "vpc_network" {
 #Subnet With Private Google Access
 resource "google_compute_subnetwork" "private" {
   name          = "private-subnetwork"
-  ip_cidr_range = "10.0.0.0/24"
+  ip_cidr_range = "10.0.0.0/8"
   region        = var.location
   network       = google_compute_network.vpc_network.id
   private_ip_google_access = true
