@@ -5,7 +5,6 @@ import os
 
 from flask import Flask, render_template
 
-# pylint: disable=C0103
 app = Flask(__name__)
 
 
@@ -13,15 +12,6 @@ app = Flask(__name__)
 def hello():
     """Return a friendly HTTP greeting."""
     message = "Hello World!"
-
-    """Get Cloud Run environment variables."""
-    service = os.environ.get('K_SERVICE', 'Unknown service')
-    revision = os.environ.get('K_REVISION', 'Unknown revision')
-
-    return render_template('index.html',
-        message=message,
-        Service=service,
-        Revision=revision)
 
 if __name__ == '__main__':
     server_port = os.environ.get('PORT', 8080)
