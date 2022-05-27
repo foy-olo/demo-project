@@ -52,3 +52,12 @@ resource "google_sql_database_instance" "instance" {
 
   deletion_protection  = "true"
 }
+
+resource "google_cloudbuild_trigger" "build-trigger" {
+  trigger_template {
+    branch_name = "main"
+    repo_name   = "demo-project"
+  }
+
+  filename = "service/Dockerfile"
+}
